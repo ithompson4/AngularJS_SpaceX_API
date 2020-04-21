@@ -1,0 +1,22 @@
+<h1>{{ aboutTitle }}</h1>
+<div *ngIf="loading else loaded">
+    <app-spinner></app-spinner>
+</div>
+<div>
+    <mat-card *ngIf="aboutItem" class="card" #loaded>
+        <mat-card-title>{{ aboutItem.name }}</mat-card-title>
+        <mat-card-content>
+            <p><span>Founder: </span>{{ aboutItem.founder }}</p>
+            <p><span>Valuation: </span>{{ aboutItem.valuation | currency}}</p>
+            <p>
+                <span>Headquarters:</span>
+                <mat-list class="list">
+                    <mat-list-item>{{ aboutItem.headquarters.address }}</mat-list-item>
+                    <mat-list-item>{{ aboutItem.headquarters.city }}</mat-list-item>
+                    <mat-list-item>{{ aboutItem.headquarters.state }}</mat-list-item>
+                </mat-list>
+            </p>
+            <p class="desc"><span>Summary:</span><br>{{ aboutItem.summary }}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

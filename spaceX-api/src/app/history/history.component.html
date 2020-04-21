@@ -1,0 +1,14 @@
+<h1>{{ historyTitle }}</h1>
+<div *ngIf="loading else loaded">
+    <app-spinner></app-spinner>
+</div>
+<div *ngIf="history" #loaded>
+    <mat-card class="card" *ngFor="let itemHistory of history">
+        <mat-card-title>{{ itemHistory.title }}</mat-card-title>
+        <mat-card-content>
+            <p><span>Flight Number: </span>{{ itemHistory.flight_number }}</p>
+            <p class="desc"><span>Details:</span><br>{{ itemHistory.details }}</p>
+        </mat-card-content>
+    </mat-card>
+    <div id="last">&nbsp;</div>
+</div>
