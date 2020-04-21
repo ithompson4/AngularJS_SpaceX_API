@@ -1,0 +1,35 @@
+<div *ngIf="loading else loaded">
+    <app-spinner></app-spinner>
+</div>
+<div *ngIf="rocket" #loaded>
+    <mat-card class="card">
+        <mat-card-title>{{ rocket.rocket_name }}</mat-card-title>
+        <mat-card-content>
+            <p><img class="pic" src="{{ rocket.flickr_images }}"></p>
+            <p class="desc"><span>Description:</span><br>{{ rocket.description }}</p>
+            <p class="desc"><span>First flight: </span>{{ rocket.first_flight | date }}</p>
+            <p><span>Country: </span>{{ rocket.country }}</p>
+            <p>
+                <span>Height:</span>
+                <mat-list class="list">
+                    <mat-list-item>{{ rocket.height.meters }} meters</mat-list-item>
+                    <mat-list-item>{{ rocket.height.feet }} feet</mat-list-item>
+                 </mat-list>
+            </p>
+            <p>
+                <span>​Diameter​:</span>
+                <mat-list class="list">
+                    <mat-list-item>{{ rocket.diameter.meters }} meters</mat-list-item>
+                    <mat-list-item>{{ rocket.diameter.feet }} feet</mat-list-item>
+                 </mat-list>
+            </p>
+            <p>
+                <span>Mass:</span>
+                <mat-list class="list">
+                    <mat-list-item>{{ rocket.mass.kg | number:'3.2-2' }} kg</mat-list-item>
+                    <mat-list-item>{{ rocket.mass.lb | number:'3.2-2' }} lb</mat-list-item>
+                 </mat-list>
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

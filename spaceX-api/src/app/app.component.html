@@ -1,0 +1,8 @@
+<app-header [dataFromParent]="parentData"></app-header>
+<div class="body">
+  <div class="back">
+    <a routerLink="">Back to Home page</a>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+<app-footer (dataEmitter)="captureEmittedData($event)"></app-footer>

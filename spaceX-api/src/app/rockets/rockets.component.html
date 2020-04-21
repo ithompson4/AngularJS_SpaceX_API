@@ -1,0 +1,15 @@
+<h1>{{ rocketsTitle }}</h1>
+<div *ngIf="loading else loaded">
+    <app-spinner></app-spinner>
+</div>
+<div *ngIf="rocket" #loaded>
+    <mat-card class="card" *ngFor="let itemRocket of rocket">
+        <mat-card-title>{{ itemRocket.rocket_name }}</mat-card-title>
+        <mat-card-content>
+            <p><img class="pic" src="{{ itemRocket.flickr_images }}"></p>
+            <p class="desc"><span>Description:</span><br>{{ itemRocket.description }}</p>
+            <a mat-stroked-button [routerLink]="['/itemRocket', itemRocket.rocket_id]">Read more...</a>
+        </mat-card-content>
+    </mat-card>
+    <div id="last">&nbsp;</div>
+</div>

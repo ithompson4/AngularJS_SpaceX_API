@@ -1,0 +1,42 @@
+.footer {
+    background-color: #673ab7;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    bottom: 0px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+}
+  
+.flex-container > div {
+    width: 100px;
+    margin-top: 10px;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+   
+a:hover, a:active {
+    text-decoration: underline;
+    color: #E8E8E8;
+}
+
+.backTop {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.copyright {
+    padding-bottom: 25px;
+}
