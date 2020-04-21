@@ -10,7 +10,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   @Output() dataEmitter: EventEmitter<any> = new EventEmitter<any>();
-  dataStr = 'Loading from child footer to parent ...';
+  dataStr = 'Back to Home Page';
 
   sendMessage() {
     this.dataEmitter.emit(this.dataStr);
